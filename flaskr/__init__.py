@@ -33,6 +33,11 @@ def create_app(test_config=None):
    
    db.init_app(app)
    
+   # Importing and registering blueprint from factory - authentication
+   
+   from flaskr import auth
+   app.register_blueprint(auth.bp)
+   
    return app 
    
 
